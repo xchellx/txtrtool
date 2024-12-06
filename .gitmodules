@@ -1,0 +1,6 @@
+[submodule "extern/gxtexture_base"]
+	path = extern/gxtexture_base
+	url = https://github.com/xchellx/gxtexture_base.git
+[submodule "extern/optparse99"]
+	path = extern/optparse99
+	url = https://github.com/xchellx/optparse99.git

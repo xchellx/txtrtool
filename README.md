@@ -7,14 +7,14 @@ Decodes and encodes TXTR files from Metroid Prime 1, 2: Echoes, and 3: Corruptio
 - [Credits](#credits)
 
 ## Info
-TODO: Info
+All of the Metroid Prime games store image textures as a custom binary format called TXTR (CTexture) which holds a header, palette header, and GX encoded image data for each mipmap. txtrtool can decode these TXTR files to TGA images and back to TXTR files. It supports every GX image format for both decoding and encoding. Mipmap and palette generation are supported as well. Npot (non power of two) images may encode/decode incorrectly (this is not the fault of txtrtool, it just is how GX works). See `txtrtool help` for usage information.
 
 ## Building
 
 ### Linux
 1. Install dependencies: `cmake ninja clang` via your package manager.
 2. Clone this repo: `git clone --recursive https://github.com/xchellx/txtrtool.git && cd txtrtool`.
-3. Build the project: `cmake -S . -B build -DCMAKE_BUILD_TYPE=<RELEASE_TYPE> -G Ninja -DSTBIR_SSE2:BOOL=ON -DSTBIR_AVX:BOOL=ON -DSTBIR_AVX2:BOOL=ON -DBUILD_SQUISH_WITH_SSE2:BOOL=ON` where `<RELEASE_TYPE>` would be either `Release` or `Debug`. Specify `-DTXTRTOOL_NOASAN:BOOL=ON` to not include ASAN (address sanitizer) on a `Debug` build.
+3. Build the project: `cmake -S . -B build -DCMAKE_BUILD_TYPE=<RELEASE_TYPE> -G Ninja -DSTBIR_SSE2:BOOL=ON -DSTBIR_AVX:BOOL=ON -DSTBIR_AVX2:BOOL=ON -DBUILD_SQUISH_WITH_SSE2:BOOL=ON` where `<RELEASE_TYPE>` would be either `Release` or `Debug`. Specify `-DTXTRTOOL_NOASAN:BOOL=ON` to not include ASAN (address sanitizer) on a `Debug` build (if you want to use another external runtime debugger like valgrind).
 4. Compile the project: `cmake --build build`.
 5. The resulting binary should be in `build` directory, named `txtrtool`.
 

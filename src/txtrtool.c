@@ -59,6 +59,8 @@
 // TODO: add better support for TGA format (convert to and from 32bit BGRA, support footer, etc.)
 // TODO: add option to intake TGA's palette (and convert it to BGRA) which will make the quantizer not run and instead
 // all colors will be collected for the palette instead.
+// TODO: Add option to put dithering on all forms of texture formats
+// TODO: Add validation logic to print
 
 typedef enum TTMode {
     TTM_SZ_MIN = SIG_ATOMIC_MIN,

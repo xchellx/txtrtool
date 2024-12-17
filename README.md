@@ -12,7 +12,7 @@ All of the Metroid Prime games store image textures as a custom binary format ca
 ## Building
 
 ### Linux
-1. Install dependencies: `git cmake ninja clang` via your package manager.
+1. Install dependencies: `git p7zip cmake ninja clang` via your package manager.
 2. Clone this repo: `git clone --recursive https://github.com/xchellx/txtrtool.git && cd txtrtool`.
 3. Build the project: `cmake -S . -B build -DCMAKE_BUILD_TYPE=<RELEASE_TYPE> -G Ninja -DSTBIR_SSE2:BOOL=ON -DSTBIR_AVX:BOOL=ON -DSTBIR_AVX2:BOOL=ON -DBUILD_SQUISH_WITH_SSE2:BOOL=ON` where `<RELEASE_TYPE>` would be either `Release` or `Debug`. Specify `-DTXTRTOOL_NOASAN:BOOL=ON` to not include ASAN (address sanitizer) on a `Debug` build (if you want to use another external runtime debugger like valgrind).
 4. Compile the project: `cmake --build build`.
@@ -22,7 +22,7 @@ All of the Metroid Prime games store image textures as a custom binary format ca
 1. Go to [MSYS2's website](https://www.msys2.org) and follow directions `1-4` on the website and uncheck `Run MSYS2 now` at step 4 on the website.
 2. Press the `Windows Key` (or click the Windows icon) and search for `msys2 clang64`, click the result titled `MSYS2 CLANG64`.
 3. Update the package database: `pacman -Syu`. Be patient. If prompted, respond with `Y`. If the prompt is `:: To complete this update all MSYS2 processes including this terminal will be closed. Confirm to proceed [Y/n]`, then respond with `Y` which will close the window then repeat steps `2` and `3`.
-4. Install dependencies: `pacman -S git mingw-w64-clang-x86_64-cmake mingw-w64-clang-x86_64-ninja mingw-w64-clang-x86_64-clang`.
+4. Install dependencies: `pacman -S git p7zip mingw-w64-clang-x86_64-cmake mingw-w64-clang-x86_64-ninja mingw-w64-clang-x86_64-clang`.
 5. Clone this repo: `git clone --recursive https://github.com/xchellx/txtrtool.git && cd txtrtool`.
 6. Build the project: `cmake -S . -B build -DCMAKE_BUILD_TYPE=<RELEASE_TYPE> -G Ninja -DSTBIR_SSE2:BOOL=ON -DSTBIR_AVX:BOOL=ON -DSTBIR_AVX2:BOOL=ON -DBUILD_SQUISH_WITH_SSE2:BOOL=ON` where `<RELEASE_TYPE>` would be either `Release` or `Debug`.
 7. Compile the project: `cmake --build build`.

@@ -17,8 +17,8 @@ if [ -d "$dp0/build" ] ; then
         cp -f -R "$dp0/licenses" "$dp0/build/package/txtrtool/licenses"
         cp -f -R "$dp0/extern/gxtexture_base/licenses" "$dp0/build/package/txtrtool/licenses"
         VERSION="$(git describe --exact-match --tags)"
-        [ $1 -ne 0 ] && [ -z "$(git status --porcelain)" ] && VERSION="$(git rev-parse --short HEAD)" || VERSION="$(git rev-parse --short HEAD)-dirty"
-        [ $1 -ne 0 ] && VERSION="unknown"
+        [ $? -ne 0 ] && [ -z "$(git status --porcelain)" ] && VERSION="$(git rev-parse --short HEAD)" || VERSION="$(git rev-parse --short HEAD)-dirty"
+        [ $? -ne 0 ] && VERSION="unknown"
         7za a -ssw -t7z -mx=9 -myx=9 -ms=off -mmt=16 -mmtf=on -mtm=off -mtc=off -mta=off -m0=LZMA2:d=256m:mf=bt4:lc=4:fb=256 "$dp0/build/txtrtool_$VERSION_msys2-clang64_win-x64.7z" "$dp0/build/package/txtrtool/"
         return 0 2>/dev/null
         exit 0

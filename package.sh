@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 dp0="$(dirname $(readlink -m $BASH_SOURCE))"
-echo "Building with cmake into $dp0/build/libgxtexture.dll..."
+echo "Building with cmake into $dp0/build/txtrtool.exe..."
 [ -d "$dp0/build" ] && "$dp0/delcfg.sh"
 [ -d "$dp0/build" ] && rm -rf "$dp0/build"
 cmake -S "$dp0" -B "$dp0/build" -DCMAKE_BUILD_TYPE=Release -G Ninja -DSTBIR_SSE2:BOOL=ON -DSTBIR_AVX:BOOL=ON -DSTBIR_AVX2:BOOL=ON -DBUILD_SQUISH_WITH_SSE2:BOOL=ON

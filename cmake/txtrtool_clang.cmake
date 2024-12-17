@@ -16,7 +16,7 @@ erase_default_options()
 macro(add_global_flags)
     # all
     set(TXTRTOOL_C_COMPILE_FLAGS
-        SHELL:"-Werror=vla" SHELL:"-Werror=missing-prototypes" SHELL:"-Werror=aggregate-return" SHELL:"-Werror=switch" SHELL:"-Werror=uninitialized" SHELL:"-Werror=varargs" SHELL:"-Werror=shift-count-overflow" SHELL:"-Werror=gnu-zero-variadic-macro-arguments" SHELL:"-Werror=Wc23-extensions" SHELL:"-Wall" SHELL:"-Wextra" SHELL:"-pedantic-errors"
+        SHELL:"-Werror=vla" SHELL:"-Werror=missing-prototypes" SHELL:"-Werror=aggregate-return" SHELL:"-Werror=switch" SHELL:"-Werror=uninitialized" SHELL:"-Werror=varargs" SHELL:"-Werror=shift-count-overflow" SHELL:"-Werror=gnu-zero-variadic-macro-arguments" SHELL:"-Werror=c23-extensions" SHELL:"-Wall" SHELL:"-Wextra" SHELL:"-pedantic-errors"
         $<$<CONFIG:Release>:SHELL:"-O2" SHELL:"-DNDEBUG">
         $<$<CONFIG:Debug>:SHELL:"-O0" SHELL:"-g3" SHELL:"-ggdb">)
     add_compile_options("$<$<COMPILE_LANGUAGE:C>:${TXTRTOOL_C_COMPILE_FLAGS}>")

@@ -716,7 +716,7 @@ static TTStatus_t decode(TTDecodeOptions_t *opts, char *input, char *output) {
     size_t mipsCount;
     TXTRDecodeOptions_t texOpts = {
         .flipX = false,
-        .flipY = true,
+        .flipY = TXTR_IsIndexed(txtr.hdr.format),
         .decAllMips = opts->mipmaps
     };
     TXTRDecodeError_t tde = TXTR_Decode(&txtr, mips, &mipsCount, &texOpts);
@@ -818,7 +818,7 @@ static TTStatus_t encode(TTEncodeOptions_t *opts, char *input, char *output) {
     TXTRRawMipmap_t txtrMips[11];
     TXTREncodeOptions_t texOpts = {
         .flipX = false,
-        .flipY = false,
+        .flipY = !TXTR_IsIndexed(opts->texFmtDec),
         .mipLimit = opts->mipLimit,
         .widthLimit = opts->widthLimit,
         .heightLimit = opts->heightLimit,
